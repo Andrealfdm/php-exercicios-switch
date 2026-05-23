@@ -33,4 +33,5 @@ Praticar os seguintes conceitos de PHP usando apenas o terminal:
 - `if/else` decisão binária (sem `elseif`)
 
 ## Pesquisar
+- [Conversão de tipos](https://www.w3schools.com/php/php_casting.asp)
 - `number_format()` https://www.php.net/manual/pt_BR/function.number-format.php 
