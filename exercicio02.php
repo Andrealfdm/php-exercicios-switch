@@ -61,3 +61,63 @@
  */
 
 // Escreva seu código aqui:
+
+
+
+$idiot = "VOCÊ E IDIOTA POR ACASO ?";
+$resultado = "";
+
+$n1 = readline("digite o primeiro numero: ");
+$n2 = readline("digite o segundo numero: ");
+
+if(!is_numeric($n1) || !is_numeric($n2)){
+    $resultado.= $idiot;
+
+}else{
+    echo "
+    Escolha a operação:
+    * [1] Soma (+)
+    * [2] Subtração (-)
+    * [3] Multiplicação (*)
+    * [4] Divisão (/)
+    \n
+    ";
+    $operacao = readline("ESCOLHA A OPERAÇÃO: ");
+
+    # verifica as opções digitadas pelo usuario
+    switch($operacao){
+        
+        case 1: 
+            $calculo = $n1 + $n2;
+            $resultado.= $n1. " + " . $n2 . " = ". $calculo;
+            break;
+        
+        case 2:
+            $calculo = $n1 - $n2;
+            $resultado.= $n1. " - " . $n2 . " = ". $calculo;
+            break;
+
+        case 3:
+            $calculo = $n1 * $n2;
+            $resultado.= $n1. " * " . $n2 . " = ". $calculo;
+            break;
+        
+        case 4:
+            if(($n1 == 0 && $n2 == 0) || $n2 == 0){
+                $resultado.= "UNDEFINED";
+                break;
+            }else{
+                $calculo = $n1 / $n2;
+                $resultado.= $n1. " / " . $n2 . " = ". $calculo;
+                break;
+            }
+        default:
+            $resultado.= $idiot;
+        }
+    }
+
+echo "\n".$resultado;
+
+
+
+

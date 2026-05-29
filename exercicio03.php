@@ -58,3 +58,69 @@
  */
 
 // Escreva seu código aqui:
+$error = "ERROR - OPÇÃO INVALIDA  ";
+$resultado = " ";
+#$qt_lanche = 0;
+$nome = readline("DIGITE SEU NOME: ");
+
+
+if(!preg_match('/^[a-zA-ZÀ-ÿ]+$/', $nome)){
+    $resultado.= $error;
+}else{
+    echo "
+        --- CARDÁPIO ---
+    * [1] X-Burger - R$ 18.50
+    * [2] X-Salada - R$ 20.00
+    * [3] X-Bacon  - R$ 22.50
+    * [4] X-Tudo   - R$ 28.00
+    \n
+    ";
+
+    $escolha_lanche = readline("ESCOLHER o lanche (1-4): ");
+
+    $tipo_lanche = "";
+    $valor_lanche = 0;
+
+    switch($escolha_lanche){
+        case 1:
+            $tipo_lanche = "X-Burger";
+            $valor_lanche = 18.50;
+            break;
+        case 2:
+            $tipo_lanche = "X-Salada";
+            $valor_lanche = 20.00;
+            break;
+        case 3:
+            $tipo_lanche = "X-Bacon";
+            $valor_lanche = 22.50;
+            break;
+
+        case 4:
+            $tipo_lanche = "X-Tudo";
+            $valor_lanche = 28.00;
+            break;
+
+        default:
+            $resultado.= $error;
+                  
+    }
+    if($resultado == " "){
+        $qt_lanche = readline("QUANTIDADE DE LANCHE: ");
+
+        if(($qt_lanche <= 0 || $qt_lanche > 50) || !is_numeric($qt_lanche)){
+            $resultado.= $error ;
+        }else{        
+        $total = ($qt_lanche * $valor_lanche);
+        $resultado.= "
+        === PEDIDO ===
+        * Cliente: ".$nome."\n        ".
+        "* Lanche:".$tipo_lanche.    "               
+        * Preço unitário: R$".$valor_lanche."        
+        * TOTAL: R$ ".$total."\n       ".  
+        " * ===============\n\n";
+        }
+    }
+}
+echo "\n" . $resultado;
+
+

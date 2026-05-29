@@ -42,3 +42,76 @@
  */
 
 // Escreva seu código aqui:
+
+
+$nome = readline("NOME DE USUARIO: ");
+$periodo = readline("1: MANHÃ -- 2: TARDE -- 3: NOITE: ");
+echo "\n";
+
+
+$idiot = "VOCÊ E IDIOTA POR ACASO!";
+$saudacao = ""; #armasena as informação que serão mostrada para o usuario !
+$horas = 0;
+
+switch($periodo){    
+    # verifica se e idiota !
+    case
+        preg_match('/[^a-zA-Z0-9]/' , $nome) || is_numeric($nome);
+        $saudacao.=$idiot;
+        break;
+
+    # verifica se e idiota !
+    case
+        !is_numeric($periodo) || !($periodo > 0 && $periodo <= 3);
+        $saudacao.=$idiot;
+        break;
+
+    # verifica se a opção foi 1
+    case 1 :
+        $horas = readline("Quantas horas pretende trabalhar 1: ");
+        echo "\n";
+
+         if(!is_numeric($horas) || !($horas > 0 && $horas <= 24) || preg_match('/[^a-zA-Z0-9]/' , $horas)){
+            $saudacao.=$idiot;
+            break;
+        }else{
+        $saudacao.= "Bom dia, ".$nome. "! Tenha uma ótima manhã !";
+        $minutos = $horas * 60;
+        $saudacao.= "\nVocê vai dedicar " .$horas. " Horas " .$minutos. " minutos nesta manhã! ";
+        break;
+        }
+
+    # verifica se a opção foi 2
+    case 2:
+        $horas = readline("Quantas horas pretende trabalhar 2: ");
+        echo "\n";
+
+         if(!is_numeric($horas) || !($horas > 0 && $horas <= 24) || preg_match('/[^a-zA-Z0-9]/' , $horas)){
+            $saudacao.=$idiot;
+            break;
+        }else{
+        $saudacao.= "Boa tarde, ".$nome. "! Tenha uma ótima tarde !";
+        $minutos = $horas * 60;
+        $saudacao.= "\nVocê vai dedicar " .$horas. " Horas " .$minutos. " minutos nesta tarde! ";
+        break;
+        }
+
+    # verifica se a opção foi numero 3
+    case 3:
+        $horas = readline("Quantas horas pretende trabalhar 3: ");
+        echo "\n";
+
+        if(!is_numeric($horas) || !($horas > 0 && $horas <= 24) || preg_match('/[^a-zA-Z0-9]/' , $horas)){
+            $saudacao.=$idiot;
+            break;
+        }else{
+            $saudacao.= "Boa noite, ".$nome. "! Tenha uma ótima noite !";
+            $minutos = $horas * 60;
+            $saudacao.= "\nVocê vai dedicar " .$horas. " Horas " .$minutos. " minutos nesta noite! ";
+            break;
+        } 
+}
+echo "\n\n";
+echo $saudacao;
+echo "\n\n";
+    
