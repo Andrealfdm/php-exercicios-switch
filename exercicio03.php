@@ -123,4 +123,3 @@ if(!preg_match('/^[a-zA-ZÀ-ÿ]+$/', $nome)){
 }
 echo "\n" . $resultado;
 
-
